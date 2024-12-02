@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto MDS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function fetchData() {
+            fetch("/data")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('temperatura').textContent = data.temperatura;
+                document.getElementById('humedad').textContent = data.humedad;
+                document.getElementById('humo').textContent = data.humo;
+                document.getElementById('estado_lampara').textContent = data.lampara ? "Encendida" : "Apagada";
+                document.getElementById('estado_traba').textContent = data.traba ? "Activada" : "Desactivada";
+            })
+            .catch(error => console.error('Error fetching data:', error));
+        }
+
+        setInterval(fetchData, 2000); // Actualizar cada 2 segundos
+    </script>
+</head>
+<body>
+    <h1 class="titulo">Proyecto MDS</h1>
+
+    <!-- Apartado 1: Sensor DHT11 -->
+    <div class="caja">
+        <h2>Sensor de Temperatura y Humedad (DHT11)</h2>
+        <p>Temperatura: <span id="temperatura">0</span> °C</p>
+        <p>Humedad: <span id="humedad">0</span> %</p>
+    </div>
+
+    <!-- Apartado 2: Sensor de Humo -->
+    <div class="caja">
+        <h2>Sensor de Humo</h2>
+        <p>Estado: <span id="humo">Normal</span></p>
+    </div>
+
+    <!-- Apartado 3: Relé de la Lámpara -->
+    <div class="caja">
+        <h2>Control de la Lámpara</h2>
+        <p><button class="button button2" onclick="location.href='/LAMPARA=ON'">Encender</button></p> 
+        <p><button class="button" onclick="location.href='/LAMPARA=OFF'">Apagar</button></p> 
+        <p class="titulo">Estado: <span id="estado_lampara">Apagada</span></p>
+    </div>
+
+    <!-- Apartado 4: Relé de la Traba -->
+    <div class="caja">
+        <h2>Control de la Traba</h2>
+        <p><button class="button button2" onclick="location.href='/TRABA=ON'">Activar</button></p> 
+        <p><button class="button" onclick="location.href='/TRABA=OFF'">Desactivar</button></p> 
+        <p class="titulo">Estado: <span id="estado_traba">Desactivada</span></p>
+    </div>
+</body>
+</html>

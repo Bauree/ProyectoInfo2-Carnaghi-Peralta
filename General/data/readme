@@ -1,0 +1,3 @@
+usar el siguiente codigo cuando se quieran aplicar cambios de la pagina para subirlos.
+
+platformio run --target uploadfs 
