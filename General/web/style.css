@@ -1,0 +1,70 @@
+/* Estilo global */
+body { /* estilos globales para la pag */
+    font-family: Arial, sans-serif; /*estilo fuente*/
+    background-color: #ceb3b3; /*color fondo*/
+    color: #333; /*letra color*/
+    margin: 0;
+    padding: 20px; /*estos dos eliminan márgenes externos y añaden relleno interno*/
+} 
+
+/* Título principal */
+.titulo { /*estilos título*/
+    text-align: center; /*centra*/
+    font-size: 2em; /*aumento x2 fuente base*/
+    color: #333; /*color título*/
+    margin-bottom: 20px; /*espacio bajo título*/
+}
+
+/* Estilo para las cajas */
+.caja { /*contenedor para cada sección*/
+    background-color: #fff; /*fondo*/
+    border: 2px solid #ccc; /*borde fris claro*/
+    border-radius: 10px; /*redondeados*/
+    padding: 20px; /*relleno interno*/
+    margin-bottom: 20px; /*espacio entre cajas*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*sombra*/
+}
+
+/* Estilo título de caja */
+.caja h2 {
+    color: #555;
+    font-size: 1.5em; /*x1.5 la base*/
+    margin-bottom: 10px; /*espacio título*/
+}
+
+/* Botones */
+.button {
+    display: inline-block; /*bóton respeta márgenes y alineación*/
+    padding: 10px 20px; /*relleno interno*/
+    font-size: 1em; /*tamaño x1*/
+    color: #fff; 
+    background-color: #007BFF; /*fondo*/
+    border: none; /*sin bordes*/
+    border-radius: 5px; /*bordes redondeados*/
+    cursor: pointer; /*cambiar el cursor al pasar encima*/
+    text-decoration: none; /*chau subrayados*/
+    text-align: center; /*center text*/
+}
+
+.button:hover {
+    background-color: #0056b3; /*cambia color fondo al pasar cursor*/
+}
+
+.button2 {
+    background-color: #28a745; /*variante de boton*/
+}
+
+.button2:hover {
+    background-color: #21883f; /*cambia color fondo al pasar cursor*/
+}
+
+/* Estado del sensor/rele */
+.caja p { /*estilo párrafos*/
+    font-size: 1.2em; /*tamaño x1.2*/
+    margin: 10px 0; /*espacio vertical párrafos*/
+}
+
+.caja p span { /*resalta valores importantes en negrita y los pone en negro*/
+    font-weight: bold;
+    color: #000;
+}
